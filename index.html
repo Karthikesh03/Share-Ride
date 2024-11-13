@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareRide - Sustainable Ride Sharing Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <i class="fas fa-car-side logo-icon"></i>
+            ShareRide
+        </a>
+        <div class="nav-links">
+            <a href="#book">Book Ride</a>
+            <a href="#share">Share Ride</a>
+            <a href="#about">About</a>
+            <a href="#safety">Safety</a>
+            <a href="#" onclick="openModal('signin')">Sign In</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ShareRide</h1>
+            <p>A sustainable ride-sharing platform connecting eco-conscious travelers. Join our community and make every journey count towards a greener future.</p>
+            <div class="cta-buttons">
+                <a href="#book-ride" class="btn btn-primary">Book a Ride</a>
+                <a href="#share-ride" class="btn btn-secondary">Share Your Ride</a>
+            </div>
+        </div>
+        
+        <!-- Animated Vehicles -->
+        <i class="fas fa-car vehicle car1"></i>
+        <i class="fas fa-taxi vehicle car2"></i>
+        <i class="fas fa-motorcycle vehicle bike1"></i>
+        <i class="fas fa-bicycle vehicle bike2"></i>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-leaf"></i>
+            <h3>Eco-Friendly</h3>
+            <p>Reduce your carbon footprint by sharing rides and contributing to a sustainable future.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Safe Rides</h3>
+            <p>Your safety is our top priority. All rides are verified and monitored in real-time.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-coins"></i>
+            <h3>Save Money</h3>
+            <p>Share travel costs and enjoy affordable rides while helping the environment.</p>
+        </div>
+    </section>
+
+    <!-- Sign In Modal -->
+    <div id="signin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('signin')">&times;</span>
+            <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 1.5rem;">Sign In</h2>
+            <form id="signin-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+                <p style="text-align: center; margin-top: 1rem; color: #666;">
+                    Don't have an account? <a href="#" style="color: var(--primary-green);">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalType) {
+            document.getElementById(`${modalType}-modal`).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalType) {
+            document.getElementById(`${modalType}-modal`).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('signin-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add sign in logic here
+            closeModal('signin');
+        });
+    </script>
+</body>
+</html>
